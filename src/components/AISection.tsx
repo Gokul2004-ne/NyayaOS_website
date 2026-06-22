@@ -61,7 +61,7 @@ function Neural() {
 export function AISection() {
   const ref = useSoundZone("ai");
   return (
-    <section id="ai" ref={ref as React.RefObject<HTMLElement>} className="relative py-32 overflow-hidden">
+    <section id="ai" ref={ref as React.RefObject<HTMLElement>} className="relative py-16 md:py-32 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-20 pointer-events-none" />
       <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center">
         <div>

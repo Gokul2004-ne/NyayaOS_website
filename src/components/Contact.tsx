@@ -84,7 +84,7 @@ export function Contact() {
     <section
       id="contact"
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative py-32 overflow-hidden"
+      className="relative py-16 md:py-32 overflow-hidden"
     >
       {/* ambient glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">

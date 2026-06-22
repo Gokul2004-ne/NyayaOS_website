@@ -16,7 +16,7 @@ const MEMBERS = [
 export function Team() {
   const ref = useSoundZone("team");
   return (
-    <section id="team" ref={ref as React.RefObject<HTMLElement>} className="relative py-32">
+    <section id="team" ref={ref as React.RefObject<HTMLElement>} className="relative py-16 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl mb-14">
           <span className="text-xs uppercase tracking-[0.3em] text-neon">Meet our team</span>

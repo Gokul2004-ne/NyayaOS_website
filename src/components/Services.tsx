@@ -9,7 +9,7 @@ export function Services() {
     <section
       id="services"
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative py-32"
+      className="relative py-16 md:py-32"
     >
       {/* Ambient backdrop */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">

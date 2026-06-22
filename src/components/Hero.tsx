@@ -128,7 +128,7 @@ export function Hero() {
         <Hero3D />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-40 pb-24">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-16 md:pt-40 pb-16 md:pb-24">
           <div className="max-w-3xl reveal">
             <span className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-cyan">
               <span className="h-1.5 w-1.5 rounded-full bg-cyan animate-pulse" />
