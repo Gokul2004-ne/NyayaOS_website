@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nyayaos-website.vercel.app/sitemap.xml

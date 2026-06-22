@@ -77,16 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "NyayaOS Prime is a futuristic 3D website showcasing a next-generation technology company." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "NyayaOS Prime is a futuristic 3D website showcasing a next-generation technology company." },
+      { title: "NyayaOS — AI-Powered Business Operating System" },
+      { name: "description", content: "Premium AI, ERP, website development, creative, and cloud capabilities unified into one futuristic operating system for ambitious teams." },
+      { name: "keywords", content: "NyayaOS, Nyaya, Nyaya OS, business intelligence, enterprise resource planning, ERP solutions, AI agents, creative production studio, cloud infrastructure, website development" },
+      { name: "author", content: "NyayaOS" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "NyayaOS — AI-Powered Business Operating System" },
+      { property: "og:description", content: "Premium AI, ERP, website development, creative, and cloud capabilities unified into one futuristic operating system for ambitious teams." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "NyayaOS Prime is a futuristic 3D website showcasing a next-generation technology company." },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@NyayaOS" },
+      { name: "twitter:title", content: "NyayaOS — AI-Powered Business Operating System" },
+      { name: "twitter:description", content: "Premium AI, ERP, website development, creative, and cloud capabilities unified into one futuristic operating system for ambitious teams." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d1d8e8d0-6112-420c-8ada-ca3c31fe6015/id-preview-7f6c517b--a34fe2cd-3c99-4445-b5a2-c60c7f9afa71.lovable.app-1781965089630.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d1d8e8d0-6112-420c-8ada-ca3c31fe6015/id-preview-7f6c517b--a34fe2cd-3c99-4445-b5a2-c60c7f9afa71.lovable.app-1781965089630.png" },
     ],
@@ -108,6 +110,22 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "NyayaOS",
+              "url": "https://nyayaos.com",
+              "logo": "https://nyayaos.com/assets/nyaya-logo.png",
+              "description": "NyayaOS is a unified intelligence layer powering ambitious teams, integrating website development, custom ERP solutions, creative VFX production, and fine-tuned AI workflows.",
+              "sameAs": [
+                "https://github.com/Gokul2004-ne/NyayaOS_website"
+              ]
+            })
+          }}
+        />
       </head>
       <body>
         {children}

@@ -29,28 +29,19 @@ export function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Try to autoplay with sound
-    video.muted = false;
-    const playPromise = video.play();
-
-    if (playPromise !== undefined) {
-      playPromise
-        .then(() => {
-          setIsMuted(false);
-        })
-        .catch((error) => {
-          console.log("Autoplay with sound blocked. Falling back to muted autoplay.", error);
-          video.muted = true;
-          setIsMuted(true);
-          video.play().catch(e => console.error("Muted playback failed:", e));
-        });
-    }
+    // Start muted for guaranteed autoplay on all devices (mobile and desktop)
+    video.muted = true;
+    setIsMuted(true);
+    video.play().catch((error) => {
+      console.log("Muted autoplay failed or was delayed:", error);
+    });
   }, []);
 
   useEffect(() => {
     const handleGlobalClick = () => {
       const video = videoRef.current;
-      if (video && video.muted) {
+      // Only unmute on global click if the user is near the hero section to prevent accidental audio triggers
+      if (video && video.muted && window.scrollY <= 100) {
         video.muted = false;
         setIsMuted(false);
         video.play().catch(e => console.log("Failed to play on click:", e));
@@ -87,28 +78,31 @@ export function Hero() {
           autoPlay
           loop
           playsInline
+          muted
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
         />
         
         {/* Subtle overlay gradients for premium look */}
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50 pointer-events-none" />
 
-        {isMuted && (
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              const video = videoRef.current;
-              if (video) {
-                video.muted = false;
-                setIsMuted(false);
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            const video = videoRef.current;
+            if (video) {
+              const nextMuted = !video.muted;
+              video.muted = nextMuted;
+              setIsMuted(nextMuted);
+              if (!nextMuted) {
                 video.play().catch(e => console.log(e));
               }
-            }}
-            className="absolute bottom-24 right-8 z-20 flex items-center gap-2 rounded-xl bg-background/80 hover:bg-background/95 border border-white/10 px-4 py-2 text-sm font-semibold text-foreground transition-all cursor-pointer shadow-lg backdrop-blur-sm"
-          >
-            🔊 Unmute Video
-          </button>
-        )}
+            }
+          }}
+          className="absolute bottom-24 right-8 z-20 flex items-center gap-2 rounded-xl bg-background/80 hover:bg-background/95 border border-white/10 px-4 py-2 text-sm font-semibold text-foreground transition-all cursor-pointer shadow-lg backdrop-blur-sm"
+        >
+          {isMuted ? "🔊 Unmute Video" : "🔇 Mute Video"}
+        </button>
 
         {/* Scroll Down option at the bottom center of the video screen */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
