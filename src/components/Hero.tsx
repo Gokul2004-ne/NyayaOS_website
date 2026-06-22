@@ -71,7 +71,7 @@ export function Hero() {
   return (
     <>
       {/* Full-Screen Video Section */}
-      <section className="relative w-full h-screen overflow-hidden bg-background">
+      <section className="relative w-full h-[60vh] md:h-screen overflow-hidden bg-background">
         <video
           ref={videoRef}
           src={videoUrl}
@@ -80,7 +80,7 @@ export function Hero() {
           playsInline
           muted
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-contain md:object-cover"
         />
         
         {/* Subtle overlay gradients for premium look */}
@@ -99,13 +99,13 @@ export function Hero() {
               }
             }
           }}
-          className="absolute bottom-24 right-8 z-20 flex items-center gap-2 rounded-xl bg-background/80 hover:bg-background/95 border border-white/10 px-4 py-2 text-sm font-semibold text-foreground transition-all cursor-pointer shadow-lg backdrop-blur-sm"
+          className="absolute bottom-20 md:bottom-24 right-4 md:right-8 z-20 flex items-center gap-2 rounded-xl bg-background/80 hover:bg-background/95 border border-white/10 px-4 py-2 text-sm font-semibold text-foreground transition-all cursor-pointer shadow-lg backdrop-blur-sm"
         >
           {isMuted ? "🔊 Unmute Video" : "🔇 Mute Video"}
         </button>
 
         {/* Scroll Down option at the bottom center of the video screen */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+        <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-20">
           <button
             onClick={() => {
               document.getElementById("main-hero-content")?.scrollIntoView({ behavior: "smooth" });

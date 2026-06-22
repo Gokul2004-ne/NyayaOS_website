@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import logoAsset from "@/assets/nyayaos-logo.png.asset.json";
+import logoAsset from "@/assets/nyaya-logo.png";
 
 
 export function Nav() {
@@ -33,7 +33,7 @@ export function Nav() {
           }`}
         >
           <Link to="/" className="flex items-center gap-2.5 group">
-            <img src={logoAsset.url} alt="NyayaOS" className="h-9 w-9 object-contain group-hover:scale-110 transition-transform" />
+            <img src={logoAsset} alt="NyayaOS" className="h-9 w-9 object-contain group-hover:scale-110 transition-transform" />
             <span className="font-display text-lg font-bold tracking-tight text-gradient">
               NyayaOS
             </span>
