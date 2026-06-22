@@ -1,10 +1,16 @@
-import harshaAsset from "@/assets/team/harsha.png.asset.json";
-import manognaAsset from "@/assets/team/manogna.png.asset.json";
 import { useSoundZone } from "@/lib/sound-context";
 
 const MEMBERS = [
-  { name: "Harsha Vardhan Kakani", role: "Founder", img: harshaAsset.url },
-  { name: "Manogna Kondapaturi", role: "CEO — Chief Executive Officer", img: manognaAsset.url },
+  { 
+    name: "Harsha Vardhan Kakani", 
+    role: "Founder", 
+    img: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a/v1/a34fe2cd-3c99-4445-b5a2-c60c7f9afa71/e7875587-e477-4c23-a29b-1e135debc0a3/harsha.png" 
+  },
+  { 
+    name: "Manogna Kondapaturi", 
+    role: "CEO — Chief Executive Officer", 
+    img: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a/v1/a34fe2cd-3c99-4445-b5a2-c60c7f9afa71/5aaec647-b513-415f-8001-8c7f19f774ce/manogna.png" 
+  },
 ];
 
 export function Team() {

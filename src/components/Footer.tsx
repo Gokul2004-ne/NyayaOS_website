@@ -1,11 +1,11 @@
-import logoAsset from "@/assets/nyayaos-logo.png.asset.json";
+import logoAsset from "@/assets/nyaya-logo.png";
 
 export function Footer() {
   return (
     <footer className="relative border-t border-border py-12 mt-12">
       <div className="mx-auto max-w-7xl px-6 grid gap-8 md:grid-cols-4">
         <div className="flex items-center gap-2">
-          <img src={logoAsset.url} alt="NyayaOS" className="h-8 w-8" />
+          <img src={logoAsset} alt="NyayaOS" className="h-8 w-8" />
           <span className="font-display font-bold text-gradient">NyayaOS</span>
         </div>
 
